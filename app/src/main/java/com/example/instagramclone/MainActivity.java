@@ -3,11 +3,10 @@
 
 package com.example.instagramclone;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.os.Bundle;
-import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity {
