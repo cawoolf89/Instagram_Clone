@@ -14,5 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("Msg", "Trail push");
         Log.i("Msg", "Trail push");
+
+        Log.i("Msg", "This is the working branch");
     }
 }
