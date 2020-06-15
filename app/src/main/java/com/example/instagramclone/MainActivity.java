@@ -15,5 +15,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("Msg", "Trail push");
         Log.i("Msg", "Trail push");
         Log.i("Msg", "This is the master branch");
+        Log.i("Msg", "This is the merge from the master into the working branch");
     }
 }
