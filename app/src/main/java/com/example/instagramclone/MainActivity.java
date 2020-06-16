@@ -1,6 +1,4 @@
-//You are still in the working branch.
-
-
+//Working bracnh test committ.
 package com.example.instagramclone;
 
 import android.os.Bundle;
@@ -60,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        //Check for duplicate names. Not really working.
-        if(checkForDuplicates(mName.getText().toString()) == true) {
-           Toast.makeText(MainActivity.this, "Duplicate student found:" + mName.getText().toString(), Toast.LENGTH_SHORT).show();
-           return;
-        }
+//        //Check for duplicate names. Not really working.
+//        if(checkForDuplicates(mName.getText().toString()) == true) {
+//           Toast.makeText(MainActivity.this, "Duplicate student found:" + mName.getText().toString(), Toast.LENGTH_SHORT).show();
+//           return;
+//        }
 
         else {
 
