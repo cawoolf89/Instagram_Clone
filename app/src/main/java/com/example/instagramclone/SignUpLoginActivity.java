@@ -26,8 +26,8 @@ public class SignUpLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_login_activity);
 
-        mUserName = findViewById(R.id.signUp_userName);
-        mUserPassword = findViewById(R.id.signUp_userPassword);
+        mUserName = findViewById(R.id.logIn_UserName);
+        mUserPassword = findViewById(R.id.logIn_Password);
         mUserNameLogin = findViewById(R.id.logIn_UserName);
         mUserPasswordLogin = findViewById(R.id.logIn_Password);
 

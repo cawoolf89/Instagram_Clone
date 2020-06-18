@@ -1,103 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E8A30041">
 
-    <LinearLayout
-        android:id="@+id/signUp_LinearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:orientation="vertical"
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/logIn_LinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/signUp_Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="User Sign Up"
-            android:gravity="center"
-            android:background="@android:color/holo_red_light"
-            android:textColor="@android:color/white"
-            android:textSize="16sp">
-        </TextView>
-        <EditText
-            android:layout_marginTop="8dp"
-            android:id="@+id/signUp_userName"
-            android:textSize="32sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="Enter user name"
-             />
-
-        <EditText
-            android:layout_marginTop="16dp"
-            android:textSize="32sp"
-            android:id="@+id/signUp_userPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="Enter Password"
-            />
-        <Button
-            android:id="@+id/signUp_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:layout_gravity="center">
-        </Button>
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/instalogo" />
 
     <LinearLayout
         android:id="@+id/logIn_LinearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUp_LinearLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/logIn_Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Login"
-            android:gravity="center"
             android:background="@android:color/holo_red_light"
-            android:textColor="@android:color/white"
-            android:textSize="16sp">
-        </TextView>
-        <EditText
-            android:layout_marginTop="8dp"
-            android:id="@+id/logIn_UserName"
-            android:textSize="32sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Enter user name"
-            />
+            android:text="User Login"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"></TextView>
 
         <EditText
-            android:layout_marginTop="16dp"
-            android:textSize="32sp"
+            android:id="@+id/logIn_UserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:hint="Enter user name"
+            android:textSize="32sp" />
+
+        <EditText
             android:id="@+id/logIn_Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:hint="Enter Password"
-            />
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/signUp_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_button"
+            android:text="Sign Up"
+            android:textColor="#F1ECEC"
+            android:textSize="24sp"></Button>
+
         <Button
             android:id="@+id/logIn_Button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_button"
             android:text="Log in"
-            android:layout_gravity="center">
-        </Button>
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"></Button>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

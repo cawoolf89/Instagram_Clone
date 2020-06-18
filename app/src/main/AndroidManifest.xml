@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpLoginActivity" />
+        <activity android:name=".SignUpLoginActivity"
+            android:label="Sign Up"/>
         <activity android:name=".StudentDataActivity"/>
     </application>
 
