@@ -46,13 +46,17 @@ public class SignUpLoginActivity extends AppCompatActivity {
                     public void done(ParseException e) {
                         if(e == null) {
                             FancyToast.makeText(SignUpLoginActivity.this, "Sign Up Success! Welcome " +  appUser.get("username"), Toast.LENGTH_SHORT).show();
+                            clearEditTextViews();
                         }
 
                         else {
                             Toast.makeText(SignUpLoginActivity.this, e.getMessage(),Toast.LENGTH_LONG).show();
+                            clearEditTextViews();
                         }
                     }
                 });
+
+
             }
         });
 
@@ -67,15 +71,27 @@ public class SignUpLoginActivity extends AppCompatActivity {
 
                             Intent welcomeActivity = new Intent(SignUpLoginActivity.this, WelcomeActivity.class);
                             startActivity(welcomeActivity);
+                            clearEditTextViews();
+
                         }
 
                         else {
                             Toast.makeText(SignUpLoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                           clearEditTextViews();
                         }
                     }
                 });
+
+
             }
         });
 
+    }
+
+    private void clearEditTextViews() {
+        mUserNameLogin.getText().clear();
+        mUserPasswordLogin.getText().clear();
+        mUserName.getText().clear();
+        mUserPassword.getText().clear();
     }
 }

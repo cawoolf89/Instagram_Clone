@@ -23,7 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
         mLogOut = findViewById(R.id.logOutButton);
 
         String userName = (String) ParseUser.getCurrentUser().get("username");
-        mWelcomeText.setText("Welcome!" + userName);
+        mWelcomeText.setText("Welcome! " + userName);
 
         mLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
