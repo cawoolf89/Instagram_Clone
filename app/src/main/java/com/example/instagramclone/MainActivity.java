@@ -1,12 +1,11 @@
 //You are in the working branch.
 
-
-
 package com.example.instagramclone;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText mGPA, mYear, mMajor, mName;
     private EditText mGetGpa, mGetYear, mGetMajor, mEnterName;
+    private Button mTransition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
         mGetGpa = findViewById(R.id.retrieveGPA_TextView);
         mGetYear = findViewById(R.id.retrieveYear_TextView);
         mGetMajor = findViewById(R.id.retrieveMajor_TextView);
+
+        mTransition = findViewById(R.id.transitionButton);
+
+        mTransition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
@@ -98,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         String name = mEnterName.getText().toString();
 
         studentDataQuery.whereEqualTo("name", name); //Pulls data based on user input of student name.
+//        studentDataQuery.whereGreaterThan("gpa", 4.3);
         studentDataQuery.getFirstInBackground(new GetCallback<ParseObject>() {
             @Override
             public void done(ParseObject student, ParseException e) {
