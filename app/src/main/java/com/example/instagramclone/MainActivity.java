@@ -2,6 +2,7 @@
 
 package com.example.instagramclone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         mTransition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent nextActivity = new Intent(MainActivity.this, SignUpLoginActivity.class);
+                startActivity(nextActivity);
 
             }
         });
