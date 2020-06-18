@@ -24,7 +24,7 @@
             android:layout_marginBottom="8dp"
             android:background="@color/colorAccent"
             android:gravity="center"
-            android:text="Find User Data"
+            android:text="Find Student Data"
             android:textColor="#FAFAFA">
 
         </TextView>
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="retrieveStudentParseData"
-            android:text="Retrieve User Info" />
+            android:text="Retrieve Student Info" />
     </LinearLayout>
 
     <include
