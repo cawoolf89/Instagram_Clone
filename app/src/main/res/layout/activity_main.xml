@@ -6,18 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <include
         android:id="@+id/main_activity_toolbar"
         layout="@layout/toolbar"></include>
+
     <LinearLayout
         android:id="@+id/optionsButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf= "@+id/main_activity_toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/main_activity_toolbar">
 
         <Button
             android:id="@+id/signUpLogIn_Button"
@@ -33,8 +35,6 @@
             android:layout_marginTop="8dp"
             android:text="Enter and Search Student Data" />
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
