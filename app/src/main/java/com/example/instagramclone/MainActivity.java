@@ -2,6 +2,7 @@
 
 package com.example.instagramclone;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private Button mSignUpLoginButton, mStudentDataButton;
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
         mSignUpLoginButton = findViewById(R.id.signUpLogIn_Button);
         mStudentDataButton = findViewById(R.id.studentData_Button);
 
+        mProgressDialog = new ProgressDialog(MainActivity.this);
+        mProgressDialog.setMessage("Loading..");
+
         mSignUpLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent signUpLoginIntent = new Intent(MainActivity.this, SignUpLoginActivity.class);
                 startActivity(signUpLoginIntent);
+                mProgressDialog.show();
 
             }
         });
@@ -43,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mProgressDialog.dismiss();
     }
 }
 

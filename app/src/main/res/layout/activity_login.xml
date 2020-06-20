@@ -1,74 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Theme.AppCompat.Light.DarkActionBar"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8A30041">
-
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="124dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/logIn_LinearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/instalogo" />
+    tools:context=".LoginActivity"
+    android:background="#A30DA8">
 
     <LinearLayout
         android:id="@+id/logIn_LinearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        >
 
         <TextView
-            android:id="@+id/logIn_Title"
+            android:id="@+id/logIn_Title_TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_red_light"
             android:gravity="center"
-            android:text="User Login"
+            android:text="Please Log in!"
             android:textColor="@android:color/white"
             android:textSize="16sp"></TextView>
 
+
         <EditText
-            android:id="@+id/logIn_UserName"
+            android:id="@+id/logIn_UserName_EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:hint="Enter user name"
-            android:textSize="32sp" />
+            android:textColorHint="#FFFDFD"
+            android:textSize="32sp"
+            android:imeOptions="actionNext"
+            android:singleLine="true"/>
 
         <EditText
-            android:id="@+id/logIn_Password"
+            android:id="@+id/logIn_Password_EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:hint="Enter Password"
-            android:textSize="32sp" />
-
-        <Button
-            android:id="@+id/signUp_Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_button"
-            android:text="Sign Up"
-            android:textColor="#F1ECEC"
-            android:textSize="24sp"></Button>
+            android:textColorHint="@android:color/white"
+            android:textSize="32sp"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:singleLine="true"
+            />
 
         <Button
             android:id="@+id/logIn_Button"
@@ -81,6 +69,17 @@
             android:text="Log in"
             android:textColor="#FFFFFF"
             android:textSize="24sp"></Button>
+
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/login_imageView"
+        android:layout_width="164dp"
+        android:layout_height="164dp"
+        app:srcCompat="@drawable/login_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/logIn_LinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
