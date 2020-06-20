@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void userLogin() {
+    private void userLogin() {
         final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this); //Deprecated?
         progressDialog.setMessage("Logging in " + mUserNameLogin.getText().toString());
         progressDialog.show();
@@ -64,5 +65,16 @@ public class LoginActivity extends AppCompatActivity {
     private void clearEditTextViews() {
        mUserNameLogin.getText().clear();
        mPasswordLogin.getText().clear();
+    }
+
+    public void rootLayoutTapped(View vew) { //Hides the keyboard when the user clicks outside the keyboard field.
+
+        try { //Prevents app from crashing when the keyboard isnt actually showing.
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

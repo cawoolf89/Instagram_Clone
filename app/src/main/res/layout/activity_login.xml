@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Theme.AppCompat.Light.DarkActionBar"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.AppCompat.Light.DarkActionBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="#A30DA8">
+    android:background="#A30DA8"
+    android:onClick="rootLayoutTapped"
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:id="@+id/logIn_LinearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/logIn_Title_TextView"
@@ -39,10 +39,10 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:hint="Enter user name"
-            android:textColorHint="#FFFDFD"
-            android:textSize="32sp"
             android:imeOptions="actionNext"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColorHint="#FFFDFD"
+            android:textSize="32sp" />
 
         <EditText
             android:id="@+id/logIn_Password_EditText"
@@ -51,12 +51,11 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:hint="Enter Password"
-            android:textColorHint="@android:color/white"
-            android:textSize="32sp"
             android:imeOptions="actionDone"
             android:inputType="text"
             android:singleLine="true"
-            />
+            android:textColorHint="@android:color/white"
+            android:textSize="32sp" />
 
         <Button
             android:id="@+id/logIn_Button"
@@ -76,10 +75,9 @@
         android:id="@+id/login_imageView"
         android:layout_width="164dp"
         android:layout_height="164dp"
-        app:srcCompat="@drawable/login_image"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/logIn_LinearLayout"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

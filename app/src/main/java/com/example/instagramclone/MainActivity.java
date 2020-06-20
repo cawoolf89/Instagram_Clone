@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent studentDataIntent = new Intent(MainActivity.this, StudentDataActivity.class);
                 startActivity(studentDataIntent);
+                mProgressDialog.show();
             }
         });
 
