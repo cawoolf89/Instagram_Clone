@@ -3,7 +3,6 @@ package com.example.instagramclone;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -20,7 +19,7 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 
 import static android.widget.Toast.*;
 
-public class SignUpLoginActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     private EditText mUserName, mUserPassword, mUserEmail;
     private Button mSignUp, mLogin;
@@ -37,10 +36,16 @@ public class SignUpLoginActivity extends AppCompatActivity {
         mSignUp = findViewById(R.id.signUp_Button);
         mLogin = findViewById(R.id.signUp_logIn_Button);
 
+        //Controls the flow of the program at the SignUp Activity
         if(ParseUser.getCurrentUser() != null) {
-            ParseUser.getCurrentUser().logOut(); //Logs out the current user if there is one, so they have to log back in after the app is closed.
+              ParseUser.getCurrentUser().logOut(); //Logs out the current user if there is one, so they have to log back in after the app is closed.
+      //      transitionToSocialMedia(); //Takes an already signed in user directly to SocialMediaActivity
         }
 
+
+        //onClick listeners for calling methods because there was a bug setting the onClick function in the design tab? It's not finding methods.
+        //Still seems you can just manually write the method in and it will work.
+        //This is kind of cool because now the method is private and encapsulated ;)
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +56,7 @@ public class SignUpLoginActivity extends AppCompatActivity {
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startLogin = new Intent(SignUpLoginActivity.this, LoginActivity.class);
+                Intent startLogin = new Intent(SignUpActivity.this, LoginActivity.class);
                 startActivity(startLogin);
             }
         });
@@ -76,7 +81,7 @@ public class SignUpLoginActivity extends AppCompatActivity {
             appUser.setPassword(userPassword);
             appUser.setEmail(userEmail);
 
-            final ProgressDialog progressDialog = new ProgressDialog(SignUpLoginActivity.this); //Deprecated?
+            final ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this); //Deprecated?
             progressDialog.setMessage("Signing up " + mUserName.getText().toString());
             progressDialog.show();
 
@@ -84,11 +89,12 @@ public class SignUpLoginActivity extends AppCompatActivity {
                 @Override
                 public void done(ParseException e) {
                     if (e == null) {
-                        FancyToast.makeText(SignUpLoginActivity.this, "Sign Up Successful! Welcome " + userName, Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                        FancyToast.makeText(SignUpActivity.this, "Sign Up Successful! Welcome " + userName, Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                         clearEditTextViews();
+                        transitionToSocialMedia();
                         progressDialog.dismiss();
                     } else {
-                        makeText(SignUpLoginActivity.this, e.getMessage(), LENGTH_LONG).show();
+                        makeText(SignUpActivity.this, e.getMessage(), LENGTH_LONG).show();
                         clearEditTextViews();
                         progressDialog.dismiss();
                     }
@@ -108,17 +114,17 @@ public class SignUpLoginActivity extends AppCompatActivity {
 
         if (userEmail.equals("")) {
 
-            makeText(SignUpLoginActivity.this,"Please enter a valid email.", LENGTH_SHORT).show();
+            makeText(SignUpActivity.this,"Please enter a valid email.", LENGTH_SHORT).show();
             validInputs = false;
         }
 
         else if (userName.equals("")) {
-            makeText(SignUpLoginActivity.this,"Please enter a user name", LENGTH_SHORT).show();
+            makeText(SignUpActivity.this,"Please enter a user name", LENGTH_SHORT).show();
             validInputs = false;
         }
 
         else if(userPassword.equals("")) {
-            makeText(SignUpLoginActivity.this,"Please enter a password.", LENGTH_SHORT).show();
+            makeText(SignUpActivity.this,"Please enter a password.", LENGTH_SHORT).show();
             validInputs = false;
         }
 
@@ -127,8 +133,9 @@ public class SignUpLoginActivity extends AppCompatActivity {
 
     public void rootLayoutTapped(View vew) { //Hides the keyboard when the user clicks outside the keyboard field.
 
-        try { //Prevents app from crashing when the keyboard isnt actually showing.
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        //Prevents app from crashing when the keyboard isnt actually showing.
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE); //Controlls various input methods to the app? Hence it can hide the keyboard.
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
         catch (Exception e) {
@@ -136,6 +143,12 @@ public class SignUpLoginActivity extends AppCompatActivity {
         }
     }
 
+    private void transitionToSocialMedia() {
+        Intent socialMediaIntent = new Intent(SignUpActivity.this, SocialMediaActivity.class);
+        startActivity(socialMediaIntent);
+    }
+
+    //Resets the text fields for the Sign Up UI
     @Override
     protected void onResume() {
         super.onResume();

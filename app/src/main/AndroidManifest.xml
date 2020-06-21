@@ -10,11 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"
-            android:parentActivityName=".SignUpLoginActivity"
-            android:label="Log in">
-
-        </activity>
+        <activity android:name=".SocialMediaActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="Log in"
+            android:parentActivityName=".SignUpActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpLoginActivity"
+            android:name=".SignUpActivity"
             android:label="Sign Up" />
         <activity android:name=".StudentDataActivity" />
     </application>

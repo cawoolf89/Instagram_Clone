@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mSignUpLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signUpLoginIntent = new Intent(MainActivity.this, SignUpLoginActivity.class);
+                Intent signUpLoginIntent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(signUpLoginIntent);
                 mProgressDialog.show();
 

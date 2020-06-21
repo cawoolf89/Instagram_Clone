@@ -3,6 +3,7 @@ package com.example.instagramclone;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -49,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(user != null && e == null) {
                     FancyToast.makeText(LoginActivity.this, "Welcome! " + user.getUsername().toString(), Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                     clearEditTextViews();
+                    transitionToSocialMedia();
                     progressDialog.dismiss();
                 }
 
@@ -77,4 +79,10 @@ public class LoginActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    private void transitionToSocialMedia() {
+        Intent socialMediaIntent = new Intent(LoginActivity.this, SocialMediaActivity.class);
+        startActivity(socialMediaIntent);
+    }
+
 }
