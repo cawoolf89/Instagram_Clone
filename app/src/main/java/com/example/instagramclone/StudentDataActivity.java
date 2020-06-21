@@ -34,6 +34,8 @@ public class StudentDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_data);
 
+        setTitle("Input and Search Student Data");
+
         Toolbar mainToolbar = findViewById(R.id.main_activity_toolbar);
         setSupportActionBar(mainToolbar);
 

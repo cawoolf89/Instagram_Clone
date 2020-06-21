@@ -10,7 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SocialMediaActivity"></activity>
+
+        <activity android:name=".SocialMediaActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+
+        </activity>
+
         <activity
             android:name=".LoginActivity"
             android:label="Log in"
@@ -22,10 +28,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SignUpActivity"
             android:label="Sign Up" />
         <activity android:name=".StudentDataActivity" />
+
     </application>
 
 </manifest>

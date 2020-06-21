@@ -27,7 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_login);
+        setContentView(R.layout.activity_signup);
 
         mUserName = findViewById(R.id.signUp_UserName_EditText);
         mUserPassword = findViewById(R.id.signUp_Password_EditText);
@@ -38,8 +38,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         //Controls the flow of the program at the SignUp Activity
         if(ParseUser.getCurrentUser() != null) {
-              ParseUser.getCurrentUser().logOut(); //Logs out the current user if there is one, so they have to log back in after the app is closed.
-      //      transitionToSocialMedia(); //Takes an already signed in user directly to SocialMediaActivity
+              //ParseUser.getCurrentUser().logOut(); //Logs out the current user if there is one, so they have to log back in after the app is closed.
+             transitionToSocialMedia(); //Takes an already signed in user directly to SocialMediaActivity
         }
 
 

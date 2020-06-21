@@ -71,7 +71,7 @@
 
     <include
         android:id="@+id/main_activity_toolbar"
-        layout="@layout/toolbar"></include>
+        layout="@layout/toolbar_layout"></include>
 
     <LinearLayout
         android:id="@+id/dataInputLayout"
