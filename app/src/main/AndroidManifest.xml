@@ -11,10 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SocialMediaActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
-
+        <activity android:name=".SocialMediaActivity">
         </activity>
 
         <activity

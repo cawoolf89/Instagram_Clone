@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Instagram Clone</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
-    <string name="social_media_title">Social Media Interface</string>
+    <string name="social_media_title">Spy CO Data Requisition Page</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

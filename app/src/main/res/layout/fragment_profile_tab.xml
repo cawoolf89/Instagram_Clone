@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileTab">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/profile_LinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_activity_toolbar">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/profileTitle_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="Input Profile Data"
+            android:textColor="#FAFAFA">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/profileCodeNameInput_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Your Code Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/profileDOBInput_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Your Date of Birth"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/profileFelonyInput_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Have You Committed Any Felonies?"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/profilePoliticalInput_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Your Political Affiliation?"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:id="@+id/profileButtons_LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="4dp"
+            >
+
+            <Button
+                android:id="@+id/profileSubmit_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="4dp"
+                android:padding="2dp"
+                android:text="Update User Info"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/profileGet_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Get User Info"
+                android:background="@drawable/rounded_button"
+                android:textColor="#FFFFFF"
+                android:layout_margin="4dp"/>
+
+            <Button
+                android:id="@+id/profileClear_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Clear Text"
+                android:background="@drawable/rounded_button"
+                android:textColor="#FFFFFF"
+                android:layout_margin="4dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
