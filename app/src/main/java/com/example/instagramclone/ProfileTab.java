@@ -3,6 +3,7 @@ package com.example.instagramclone;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +27,7 @@ public class ProfileTab extends Fragment {
 
 
     private EditText mCodeNameInput, mDOBInput, mFelonyInput, mPoliticalInput;
-    private Button mSubmit, mGetUserInfo, mClearText;
+    private Button mSubmit, mGetUserInfo, mClearText, mLogOut;
 
     public ProfileTab() {
         // Required empty public constructor
@@ -46,6 +47,7 @@ public class ProfileTab extends Fragment {
         mSubmit = view.findViewById(R.id.profileSubmit_Button);
         mGetUserInfo = view.findViewById(R.id.profileGet_Button);
         mClearText = view.findViewById(R.id.profileClear_Button);
+        mLogOut = view.findViewById(R.id.profileLogOut_Button);
 
         final ParseUser parseUser = ParseUser.getCurrentUser(); //Since we logged in here from the other page. Gets the current user and then passes more info into that profile.
 
@@ -57,7 +59,7 @@ public class ProfileTab extends Fragment {
                 }
                 catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_LONG).show(); //Need to call getContext() when your getting the context of a fragment.
                 }
             }
         });
@@ -79,6 +81,15 @@ public class ProfileTab extends Fragment {
             @Override
             public void onClick(View v) {
                 clearInputFields();
+            }
+        });
+
+        mLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.getCurrentUser().logOut();
+                Intent logOut = new Intent(getContext(), LoginActivity.class);
+                startActivity(logOut);
             }
         });
 

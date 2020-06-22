@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 
 import com.google.android.material.tabs.TabLayout;
+import com.parse.ParseUser;
 
 public class SocialMediaActivity extends AppCompatActivity {
 
@@ -21,7 +22,9 @@ public class SocialMediaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media);
 
-        setTitle(R.string.social_media_title);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        String codeName = (String) currentUser.get("codeName");
+        setTitle("Spy Co: " + codeName);
 
         mToolbar = findViewById(R.id.toolbar_layout_ID);
         setSupportActionBar(mToolbar);
