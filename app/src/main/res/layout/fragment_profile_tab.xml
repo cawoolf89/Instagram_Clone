@@ -100,16 +100,6 @@
                 android:layout_margin="4dp"
                 />
 
-            <Button
-                android:id="@+id/profileLogOut_Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Log Out"
-                android:background="@drawable/rounded_button"
-                android:textColor="#FFFFFF"
-                android:layout_margin="4dp"
-                />
         </LinearLayout>
 
     </LinearLayout>

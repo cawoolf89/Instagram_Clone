@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
     private void transitionToSocialMedia() {
         Intent socialMediaIntent = new Intent(LoginActivity.this, SocialMediaActivity.class);
         startActivity(socialMediaIntent);
+        finish(); //Removes the activity from the stack, so the back button on the device won't return to it.
     }
 
 }

@@ -47,7 +47,7 @@ public class ProfileTab extends Fragment {
         mSubmit = view.findViewById(R.id.profileSubmit_Button);
         mGetUserInfo = view.findViewById(R.id.profileGet_Button);
         mClearText = view.findViewById(R.id.profileClear_Button);
-        mLogOut = view.findViewById(R.id.profileLogOut_Button);
+//        mLogOut = view.findViewById(R.id.profileLogOut_Button);
 
         final ParseUser parseUser = ParseUser.getCurrentUser(); //Since we logged in here from the other page. Gets the current user and then passes more info into that profile.
 
@@ -84,14 +84,14 @@ public class ProfileTab extends Fragment {
             }
         });
 
-        mLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ParseUser.getCurrentUser().logOut();
-                Intent logOut = new Intent(getContext(), LoginActivity.class);
-                startActivity(logOut);
-            }
-        });
+//        mLogOut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ParseUser.getCurrentUser().logOut();
+//                Intent logInScreen = new Intent(getContext(), LoginActivity.class);
+//                startActivity(logInScreen);
+//            }
+//        });
 
         return view;
     }

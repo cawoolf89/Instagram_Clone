@@ -146,6 +146,7 @@ public class SignUpActivity extends AppCompatActivity {
     private void transitionToSocialMedia() {
         Intent socialMediaIntent = new Intent(SignUpActivity.this, SocialMediaActivity.class);
         startActivity(socialMediaIntent);
+        finish(); //Removes the activity from the stack, so the back button on the device won't return to it.
     }
 
     //Resets the text fields for the Sign Up UI

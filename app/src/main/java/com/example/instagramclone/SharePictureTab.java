@@ -72,7 +72,9 @@ public class SharePictureTab extends Fragment {
         mShareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 shareButtonClicked();
+
             }
         });
 
@@ -80,13 +82,16 @@ public class SharePictureTab extends Fragment {
         return view;
     }
 
+
+    //Uploads image to the server
     private void shareButtonClicked() {
+
+        final ProgressDialog dialog = new ProgressDialog(getContext());
+        dialog.setMessage("Uploading Image..");
+        dialog.show();
 
         if(receivedImageBitMap != null && !mTextDescripton.toString().equals("") ) {
 
-            final ProgressDialog dialog = new ProgressDialog(getContext());
-            dialog.setMessage("Uploading Image..");
-            dialog.show();
 
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(); //Converts the image to a byte stream for ease of uploading over the internet because of its large size.
             receivedImageBitMap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
@@ -103,19 +108,18 @@ public class SharePictureTab extends Fragment {
                 public void done(ParseException e) {
                     if(e == null) {
                         FancyToast.makeText(getContext(),"Upload Complete!", Toast.LENGTH_SHORT,FancyToast.SUCCESS,true).show();
+                        dialog.dismiss();
                     }
                     else {
                         Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_LONG).show();
-
+                        dialog.dismiss();
                     }
-                    dialog.dismiss();
                 }
             });
         }
         else {
             FancyToast.makeText(getContext(),"Please select an image and add description", Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
         }
-
 
     }
 
@@ -158,7 +162,7 @@ public class SharePictureTab extends Fragment {
         }
     }
 
-    @Override //Accesses the image. Fragment access is different from activity access.
+    @Override //Accesses the image. This method called from getChosenImage() intents. Fragment access is different from activity access.
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
